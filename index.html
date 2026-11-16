@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundWave - Registro y Contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>SoundWave</h1>
+    <p>La app para descubrir y compartir música.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-registro">
+      <h2 id="titulo-registro">Registro</h2>
+
+      <form action="https://formspree.io/f/xbgogwew" method="POST" aria-label="Formulario de registro">
+        <fieldset>
+          <legend>Datos personales</legend>
+
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Pérez" autocomplete="name" minlength="3" maxlength="60" required>
+
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="ana@ejemplo.com" autocomplete="email" required>
+
+          <label for="edad">Edad</label>
+          <input type="number" id="edad" name="edad" placeholder="18" min="13" max="120" required>
+
+          <label for="nacimiento">Fecha de nacimiento</label>
+          <input type="date" id="nacimiento" name="nacimiento" min="1900-01-01" max="2013-12-31" autocomplete="bday" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Cuenta</legend>
+
+          <label for="usuario">Nombre de usuario</label>
+          <input type="text" id="usuario" name="usuario" placeholder="5 a 12 letras o números" autocomplete="username" pattern="[A-Za-z0-9]{5,12}" minlength="5" maxlength="12" title="Entre 5 y 12 caracteres alfanuméricos" required>
+
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" minlength="8" maxlength="64" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ubicación</legend>
+
+          <label for="pais">País</label>
+          <select id="pais" name="pais" autocomplete="country-name" required>
+            <option value="">Elegí tu país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Chile">Chile</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Peru">Perú</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Mexico">México</option>
+            <option value="Espana">España</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <label for="ciudad">Ciudad de residencia</label>
+          <input type="text" id="ciudad" name="ciudad" list="ciudades" placeholder="Empezá a escribir tu ciudad" autocomplete="address-level2" maxlength="50" required>
+          <datalist id="ciudades">
+            <option value="Buenos Aires">
+            <option value="Córdoba">
+            <option value="Rosario">
+            <option value="Mendoza">
+            <option value="Santiago">
+            <option value="Montevideo">
+            <option value="Asunción">
+            <option value="Lima">
+            <option value="Bogotá">
+            <option value="Ciudad de México">
+            <option value="Madrid">
+          </datalist>
+        </fieldset>
+
+        <fieldset class="opciones">
+          <legend>Género</legend>
+
+          <input type="radio" id="genero-femenino" name="genero" value="Femenino" required>
+          <label for="genero-femenino">Femenino</label>
+
+          <input type="radio" id="genero-masculino" name="genero" value="Masculino">
+          <label for="genero-masculino">Masculino</label>
+
+          <input type="radio" id="genero-no-binario" name="genero" value="No binario">
+          <label for="genero-no-binario">No binario</label>
+
+          <input type="radio" id="genero-prefiero-no-decir" name="genero" value="Prefiero no decir">
+          <label for="genero-prefiero-no-decir">Prefiero no decir</label>
+        </fieldset>
+
+        <fieldset class="opciones">
+          <legend>Intereses musicales</legend>
+
+          <input type="checkbox" id="interes-rock" name="intereses" value="Rock">
+          <label for="interes-rock">Rock</label>
+
+          <input type="checkbox" id="interes-pop" name="intereses" value="Pop">
+          <label for="interes-pop">Pop</label>
+
+          <input type="checkbox" id="interes-electronica" name="intereses" value="Electrónica">
+          <label for="interes-electronica">Electrónica</label>
+
+          <input type="checkbox" id="interes-hiphop" name="intereses" value="Hip hop">
+          <label for="interes-hiphop">Hip hop</label>
+
+          <input type="checkbox" id="interes-jazz" name="intereses" value="Jazz">
+          <label for="interes-jazz">Jazz</label>
+
+          <input type="checkbox" id="interes-folklore" name="intereses" value="Folklore">
+          <label for="interes-folklore">Folklore</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sobre vos</legend>
+
+          <label for="biografia">Biografía corta</label>
+          <textarea id="biografia" name="biografia" rows="4" placeholder="Contanos qué música te gusta" minlength="10" maxlength="200" required></textarea>
+        </fieldset>
+
+        <button type="submit">Crear cuenta</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Contacto y soporte técnico</h2>
+
+      <form action="https://formspree.io/f/xljbjzye" method="POST" aria-label="Formulario de contacto">
+        <label for="contacto-nombre">Nombre</label>
+        <input type="text" id="contacto-nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" minlength="2" maxlength="60" required>
+
+        <label for="contacto-email">Email</label>
+        <input type="email" id="contacto-email" name="email" placeholder="tu@ejemplo.com" autocomplete="email" required>
+
+        <label for="motivo">Motivo de contacto</label>
+        <select id="motivo" name="motivo" required>
+          <option value="">Elegí un motivo</option>
+          <option value="Problema con mi cuenta">Problema con mi cuenta</option>
+          <option value="Error en la app">Error en la app</option>
+          <option value="Pagos y suscripción">Pagos y suscripción</option>
+          <option value="Sugerencia">Sugerencia</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label for="mensaje">Mensaje detallado</label>
+        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Contanos qué pasó con el mayor detalle posible" minlength="20" maxlength="1000" required></textarea>
+
+        <div class="check">
+          <input type="checkbox" id="terminos" name="terminos" value="Aceptado" required>
+          <label for="terminos">Acepto los términos y condiciones</label>
+        </div>
+
+        <button type="submit" aria-label="Enviar mensaje de soporte">Enviar</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
